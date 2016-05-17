@@ -8,7 +8,6 @@
  *
  */
 function DisplacingTimer(context, tickHandler, interval, type){
-    this.log= DisplacingTimer.log;
     this.context= context?context:this;
     this.tick= tickHandler;
     this.interval= interval;
@@ -22,7 +21,6 @@ function DisplacingTimer(context, tickHandler, interval, type){
     //this.start();
 }
 
-DisplacingTimer.log= log4javascript.getLogger("DisplacingTimer");
 DisplacingTimer.Type={
     Timeout: 1,
     Interval: 2,
@@ -41,7 +39,6 @@ DisplacingTimer.prototype.start= function(){
         if (this.interval){
             this.id= setTimeout(
                 function (){
-                    //this2.log.debug("DisplacingTimer.start() executing tick handler...");
                     this2.id= undefined;  //сброс идентификатора стоит до вызова обработчика, потмоу что в обработчике может вызываться sender.start() - повторный старт
                     this2.tick.call(this2.context, this2, {});
                 },
@@ -57,7 +54,6 @@ DisplacingTimer.prototype.start= function(){
         clearInterval(this.id);
         this.id= setInterval(
             function (){
-                //this2.log.debug("DisplacingTimer.start() executing tick handler...");
                 this2.tick.call(this2.context, this2, {});
             },
             this.interval
@@ -90,3 +86,5 @@ DisplacingTimer.prototype.fireImmediately= function(){
         }
     }
 };
+
+module.exports= DisplacingTimer;

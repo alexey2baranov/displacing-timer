@@ -1,0 +1,23 @@
+{
+  "name": "displacing-timer",
+  "version": "1.0.0",
+  "description": "timer ex",
+  "main": "./src/DisplacingTimer.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexey2baranov/displacing-timer.git"
+  },
+  "author": "alxey2baranov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexey2baranov/displacing-timer/issues"
+  },
+  "homepage": "https://github.com/alexey2baranov/displacing-timer#readme",
+  "devDependencies": {
+  },
+  "dependencies": {
+  }
+}
